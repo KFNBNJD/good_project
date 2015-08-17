@@ -1,0 +1,14 @@
+Unit -> Character -> Wiggle
+    |            |-> Monster -> Ogr
+    |                       |-> Rat
+    |                       |-> Bat
+    |
+    |-> Building -> Useable -> Bonfire
+                |          |-> Mushroom mill
+                |          |-> Anvil
+                |          |-> Door
+                |          |-> etc..
+                |
+                |-> Terrain modifier -> Bridge
+                                    |-> ???
+                                    |-> ...
