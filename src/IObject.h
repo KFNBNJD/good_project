@@ -14,8 +14,6 @@ public:
 
 protected:
     unsigned int uniqueId;
-
-private:
     static unsigned int globalId;
 };
 
