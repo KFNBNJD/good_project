@@ -7,6 +7,9 @@
 #ifndef GOOD_PROJECT_IEVENT_H
 #define GOOD_PROJECT_IEVENT_H
 
+/**
+ * Class Event
+ */
 class Event {
 public:
     Event();
