@@ -12,3 +12,35 @@ Unit -> Character -> Wiggle
                 |-> Terrain modifier -> Bridge
                                     |-> ???
                                     |-> ...
+                                    
+/// brief overview                  
+                                    
+Unit {
+	model,
+	positon,
+	name,
+	hp,
+	side, // 0 - neytral, 1 - friend, 2 - enemy
+	inventary,
+	...
+}
+
+Character : Unit {
+	// business logic
+	go_to(),
+	attack(),
+	...
+}
+
+Wiggle {
+	skill points,
+	age,
+	profession,
+	build(),
+	dig(),
+	...
+}
+
+Monster {
+	???
+}
