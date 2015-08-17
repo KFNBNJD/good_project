@@ -1,4 +1,5 @@
 #include <iostream>
+#include <set>
 using namespace std;
 
 #include "MovableObject.h"
@@ -49,6 +50,13 @@ int main() {
     text.setText("hello world");
     text.setLifeTime(sf::seconds(3)); // text will disappear after 3 second
 
+    //////////////////////////////////////////
+    /// Testing graphic stack
+    //////////////////////////////////////////
+
+    std::set<GraphicsComponent*> graphicStack;
+    graphicStack.insert(&text);
+
     sf::Clock clock;
     while (window.isOpen()) {
     	clock.restart();
@@ -62,12 +70,13 @@ int main() {
 
     	window.clear();
 
-    	/// Update text lifeTime
-    	text.update(clock.getElapsedTime());
-    	/// Drawing text
-    	if (!text.isOver()) {
-    		text.draw(window);
+    	for (GraphicsComponent * gc : graphicStack) {
+    		gc->update(clock.getElapsedTime());
+    		gc->draw(window);
+    		if (gc->isOver())
+    			graphicStack.erase(gc);
     	}
+
 
     	window.display();
     }
